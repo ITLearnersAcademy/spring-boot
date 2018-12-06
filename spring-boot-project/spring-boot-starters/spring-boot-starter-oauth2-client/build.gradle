@@ -1,0 +1,16 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Spring Security's OAuth2/OpenID Connect client features"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation 'org.springframework.security:spring-security-config'
+	implementation 'org.springframework.security:spring-security-core'
+	implementation 'org.springframework.security:spring-security-oauth2-client'
+	implementation 'org.springframework.security:spring-security-oauth2-jose'
+}

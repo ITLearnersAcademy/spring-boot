@@ -1,0 +1,15 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Cassandra distributed database and Spring Data 		Cassandra Reactive 	"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation 'org.springframework:spring-tx'
+	implementation 'org.springframework.data:spring-data-cassandra'
+	implementation 'io.projectreactor:reactor-core'
+}

@@ -2,6 +2,8 @@ plugins {
 	id 'org.springframework.boot.bom'
 }
 
+description = 'Spring Boot Parent'
+
 bom {
     property 'maven.version', '3.5.4'
     property 'maven-resolver.version', '1.1.1'

@@ -1,0 +1,16 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Undertow as the embedded servlet container. An 		alternative to spring-boot-starter-tomcat"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation 'io.undertow:undertow-core'
+	implementation 'io.undertow:undertow-servlet'
+	implementation 'io.undertow:undertow-websockets-jsr'
+	implementation 'javax.servlet:javax.servlet-api'
+	implementation 'org.glassfish:javax.el'
+}

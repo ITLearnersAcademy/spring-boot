@@ -1,0 +1,13 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for exposing Spring Data repositories over REST using Spring 		Data REST"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-web')
+	implementation 'org.springframework.data:spring-data-rest-webmvc'
+}

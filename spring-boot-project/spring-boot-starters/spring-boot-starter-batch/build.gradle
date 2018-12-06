@@ -1,0 +1,14 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Spring Batch"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-jdbc')
+	implementation 'org.springframework.batch:spring-batch-core'
+}

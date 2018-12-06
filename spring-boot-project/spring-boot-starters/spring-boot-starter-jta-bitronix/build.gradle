@@ -1,0 +1,15 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for JTA transactions using Bitronix"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation 'javax.jms:javax.jms-api'
+	implementation 'javax.transaction:javax.transaction-api'
+	implementation 'org.codehaus.btm:btm'
+}

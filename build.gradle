@@ -1,3 +1,5 @@
+description = 'Spring Boot Build'
+
 allprojects {
 	group 'org.springframework.boot'
 

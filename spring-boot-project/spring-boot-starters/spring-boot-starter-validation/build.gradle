@@ -1,0 +1,14 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Java Bean Validation with Hibernate 		Validator"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation 'org.apache.tomcat.embed:tomcat-embed-el'
+	implementation 'org.hibernate.validator:hibernate-validator'
+}

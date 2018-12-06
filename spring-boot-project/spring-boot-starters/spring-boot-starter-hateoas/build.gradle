@@ -1,0 +1,14 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for building hypermedia-based RESTful web application with 		Spring MVC and Spring HATEOAS"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-web')
+	implementation 'org.springframework.hateoas:spring-hateoas'
+	implementation 'org.springframework.plugin:spring-plugin-core'
+}

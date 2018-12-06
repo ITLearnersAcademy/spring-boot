@@ -2,9 +2,7 @@ plugins {
 	id 'java-library'
 }
 
-repositories {
-	mavenCentral()
-}
+description = 'Spring Boot Testing Support'
 
 dependencies {
 	compileOnly "com.datastax.cassandra:cassandra-driver-core"

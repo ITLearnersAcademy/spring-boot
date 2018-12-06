@@ -1,0 +1,15 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Log4j2 for logging. An alternative to 		spring-boot-starter-logging"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation 'org.apache.logging.log4j:log4j-slf4j-impl'
+	implementation 'org.apache.logging.log4j:log4j-core'
+	implementation 'org.apache.logging.log4j:log4j-jul'
+	implementation 'org.slf4j:jul-to-slf4j'
+}

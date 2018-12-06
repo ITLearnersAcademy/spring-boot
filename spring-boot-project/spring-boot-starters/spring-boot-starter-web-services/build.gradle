@@ -1,0 +1,16 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Spring Web Services"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-web')
+	implementation 'com.sun.xml.messaging.saaj:saaj-impl'
+	implementation 'javax.xml.ws:jaxws-api'
+	implementation 'org.springframework:spring-oxm'
+	implementation 'org.springframework.ws:spring-ws-core'
+}

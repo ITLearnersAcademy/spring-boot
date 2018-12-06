@@ -1,0 +1,16 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Spring Cloud Connectors which simplifies connecting 		to services in cloud platforms like Cloud Foundry and Heroku"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation 'org.springframework.cloud:spring-cloud-spring-service-connector'
+	implementation 'org.springframework.cloud:spring-cloud-cloudfoundry-connector'
+	implementation 'org.springframework.cloud:spring-cloud-heroku-connector'
+	implementation 'org.springframework.cloud:spring-cloud-localconfig-connector'
+}

@@ -1,0 +1,18 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for building WebFlux applications using Spring Framework's 		Reactive Web support"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-json')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-reactor-netty')
+	implementation 'org.hibernate.validator:hibernate-validator'
+	implementation 'org.springframework:spring-web'
+	implementation 'org.springframework:spring-webflux'
+	implementation 'org.synchronoss.cloud:nio-multipart-parser'
+}

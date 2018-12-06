@@ -1,0 +1,21 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for building RESTful web applications using JAX-RS and Jersey. 		An alternative to spring-boot-starter-web"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-json')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-tomcat')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-validation')
+	implementation 'org.springframework:spring-web'
+	implementation 'org.glassfish.jersey.core:jersey-server'
+	implementation 'org.glassfish.jersey.containers:jersey-container-servlet-core'
+	implementation 'org.glassfish.jersey.containers:jersey-container-servlet'
+	implementation 'org.glassfish.jersey.ext:jersey-bean-validation'
+	implementation 'org.glassfish.jersey.ext:jersey-spring4'
+	implementation 'org.glassfish.jersey.media:jersey-media-json-jackson'
+}

@@ -1,0 +1,18 @@
+plugins {
+	id 'java'
+	id 'maven-publish'
+	id 'org.springframework.boot.conventions'
+}
+
+description = "Starter for using Spring Data JPA with Hibernate"
+
+dependencies {
+	implementation enforcedPlatform(project(':spring-boot-project:spring-boot-dependencies'))
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-aop')
+	implementation project(':spring-boot-project:spring-boot-starters:spring-boot-starter-jdbc')
+	implementation 'javax.transaction:javax.transaction-api'
+	implementation 'javax.xml.bind:jaxb-api'
+	implementation 'org.hibernate:hibernate-core'
+	implementation 'org.springframework.data:spring-data-jpa'
+	implementation 'org.springframework:spring-aspects'
+}
