@@ -24,19 +24,15 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication.Type;
-import org.springframework.boot.autoconfigure.data.rest.RepositoryRestMvcAutoConfiguration;
-import org.springframework.boot.autoconfigure.http.HttpMessageConvertersAutoConfiguration;
 import org.springframework.boot.autoconfigure.jackson.JacksonAutoConfiguration;
-import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
+import org.springframework.boot.autoconfigure.web.reactive.WebFluxAutoConfiguration;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
 import org.springframework.hateoas.EntityModel;
 import org.springframework.hateoas.client.LinkDiscoverers;
-import org.springframework.hateoas.config.EnableEntityLinks;
 import org.springframework.hateoas.config.EnableHypermediaSupport;
 import org.springframework.hateoas.config.EnableHypermediaSupport.HypermediaType;
-import org.springframework.hateoas.server.EntityLinks;
+import org.springframework.hateoas.support.WebStack;
 import org.springframework.plugin.core.Plugin;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -44,32 +40,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * {@link EnableAutoConfiguration Auto-configuration} for Spring HATEOAS's
  * {@link EnableHypermediaSupport @EnableHypermediaSupport}.
  *
- * @author Roy Clarkson
- * @author Oliver Gierke
  * @author Andy Wilkinson
- * @since 1.1.0
+ * @since 2.2.0
  */
 @Configuration(proxyBeanMethods = false)
 @ConditionalOnClass({ EntityModel.class, RequestMapping.class, Plugin.class })
-@ConditionalOnWebApplication(type = Type.SERVLET)
-@AutoConfigureAfter({ WebMvcAutoConfiguration.class, JacksonAutoConfiguration.class,
-		HttpMessageConvertersAutoConfiguration.class, RepositoryRestMvcAutoConfiguration.class })
+@ConditionalOnWebApplication(type = Type.REACTIVE)
+@AutoConfigureAfter({ WebFluxAutoConfiguration.class, JacksonAutoConfiguration.class })
 @EnableConfigurationProperties(HateoasProperties.class)
-@Import(HypermediaHttpMessageConverterConfiguration.class)
-public class HypermediaAutoConfiguration {
+public class HypermediaReactiveAutoConfiguration {
 
 	@Configuration(proxyBeanMethods = false)
 	@ConditionalOnMissingBean(LinkDiscoverers.class)
 	@ConditionalOnClass(ObjectMapper.class)
-	@EnableHypermediaSupport(type = HypermediaType.HAL)
+	@EnableHypermediaSupport(type = HypermediaType.HAL, stacks = WebStack.WEBFLUX)
 	protected static class HypermediaConfiguration {
-
-	}
-
-	@Configuration(proxyBeanMethods = false)
-	@ConditionalOnMissingBean(EntityLinks.class)
-	@EnableEntityLinks
-	protected static class EntityLinksConfiguration {
 
 	}
 
